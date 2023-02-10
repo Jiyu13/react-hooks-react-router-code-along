@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 // Step 1. Import react-router functions
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 function About() {
   return (
@@ -41,15 +41,22 @@ function Home() {
 function App() {
   return (
     <div>
-      <Route path="/">
-        <Home />
-      </Route>
-      <Route path="/about">
-        <About />
-      </Route>
-      <Route path="/login">
-        <Login />
-      </Route>
+      {/* use <Switch> to only render one component each time */}
+      <Switch>
+        
+        <Route path="/about">
+          <About />
+        </Route>
+        <Route path="/login">
+          <Login />
+        </Route>
+
+        {/* move Home component to the bottom to prevent only render the first route that matches any part of the URL */}
+        <Route path="/">
+          <Home />
+        </Route>
+      </Switch>
+      
     </div>
   );
 }
