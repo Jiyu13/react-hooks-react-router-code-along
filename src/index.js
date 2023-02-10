@@ -42,8 +42,14 @@ function App() {
   return (
     <div>
       {/* use <Switch> to only render one component each time */}
-      <Switch>
+      {/* <Switch> */}
         
+        {/* move Home component to the bottom 
+        to prevent only render the first route that matches any part of the URL */}
+        <Route exact path="/">
+          <Home />
+        </Route>
+
         <Route path="/about">
           <About />
         </Route>
@@ -51,11 +57,8 @@ function App() {
           <Login />
         </Route>
 
-        {/* move Home component to the bottom to prevent only render the first route that matches any part of the URL */}
-        <Route path="/">
-          <Home />
-        </Route>
-      </Switch>
+      
+      {/* </Switch> */}
       
     </div>
   );
