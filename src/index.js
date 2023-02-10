@@ -40,12 +40,17 @@ function Home() {
 // Step 2. Use <Route> components to define client-side routes in our app
 function App() {
   return (
-    <Route path="/">
-      <Home />
-      <About />
-      <Login />
-    </Route>
-    
+    <div>
+      <Route path="/">
+        <Home />
+      </Route>
+      <Route path="/about">
+        <About />
+      </Route>
+      <Route path="/login">
+        <Login />
+      </Route>
+    </div>
   );
 }
 
